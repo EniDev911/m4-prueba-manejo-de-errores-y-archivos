@@ -1,7 +1,8 @@
 from error import SubTipoInvalidoError
+from abc import ABC, abstractmethod
 
 
-class Anuncio:
+class Anuncio(ABC):
     FORMATO = ""
     SUB_TIPOS = ()
 
@@ -69,9 +70,11 @@ class Anuncio:
     def url_archivo(self, url_clic):
         self.__url_clic = url_clic
 
+    @abstractmethod
     def comprimir_anuncio(self):
         pass
 
+    @abstractmethod
     def redimensionar_anuncio(self):
         pass
 
