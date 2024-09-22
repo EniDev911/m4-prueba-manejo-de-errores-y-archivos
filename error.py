@@ -12,5 +12,8 @@ class SubTipoInvalidoError(Error):
 
 
 class LargoExcedidoError(Error):
-    def __init__(self, mensaje):
-        self.mensaje = mensaje
+    def __init__(self, longitud):
+        self.__longitud = longitud
+
+    def __str__(self) -> str:
+        return f"Largo excedido, la cantidad máxima de caracteres es {self.__longitud}"
