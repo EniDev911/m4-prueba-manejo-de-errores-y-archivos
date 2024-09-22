@@ -4,11 +4,11 @@ class Error(Exception):
 
 class SubTipoInvalidoError(Error):
 
-    def __init__(self, mensaje):
-        self.mensaje = mensaje
+    def __init__(self, subtipos):
+        self.__sub_tipos = subtipos
 
     def __str__(self) -> str:
-        return super().__str__()
+        return f"Subtipo Invalido, los Subtipos válidos son {self.__sub_tipos}"
 
 
 class LargoExcedidoError(Error):
