@@ -104,10 +104,31 @@ class Video(Anuncio):
         print("RECORTE DE VIDEO NO IMPLEMENTADO AÚN")
 
 
+class Display(Anuncio):
+    FORMATO = "Display"
+    SUB_TIPOS = ("tradicional", "nativa")
+
+    def comprimir_anuncio(self):
+        print("COMPRESIÓN DE ANUNCIOS DISPLAY NO IMPLEMENTADA AÚN")
+
+    def redimensionar_anuncio(self):
+        print("REDIMENSIONAMIENTO DE ANUNCIOS DISPLAY NO IMPLEMENTADO AÚN")
+
+
+class Social(Anuncio):
+    FORMATO = "Social"
+    SUB_TIPOS = ("facebook", "linkedin")
+
+    def comprimir_anuncio(self):
+        print("COMPRESIÓN DE ANUNCIOS DE REDES SOCIALES NO IMPLEMENTADA AÚ")
+
+    def redimensionar_anuncio(self):
+        print("REDIMENSIONAMIENTO DE ANUNCIOS DE REDES SOCIALES NO IMPLEMENTADO AÚN")
+
+
 if __name__ == "__main__":
     anuncio_video = Video("C:\\video.mp3", "C:\\clic", "instream", 10)
-    print(anuncio_video.alto)
-    print(anuncio_video.ancho)
-    anuncio_video.mostrar_formatos(Video.FORMATO, Video.SUB_TIPOS)
-    anuncio_video.comprimir_anuncio()
-    # print(anuncio_video.sub_tipo)
+    anuncio_display = Display(1, 2, "C:\\display", "C:\\clic", "tradicional")
+    anuncio_display.mostrar_formatos(Video.FORMATO, Video.SUB_TIPOS)
+    print()
+    anuncio_display.mostrar_formatos(Display.FORMATO, Display.SUB_TIPOS)
